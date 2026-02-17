@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AccumulationRegister uuid="d99d52dc-3d04-4806-bd52-fe33e31b3663">
+		<InternalInfo>
+			<xr:GeneratedType name="AccumulationRegisterRecord.СебестоимостьТоваров" category="Record">
+				<xr:TypeId>ab55ef6c-7874-4e46-9664-dff0d20df605</xr:TypeId>
+				<xr:ValueId>ad9252b7-ff2e-41a4-9703-d7338c9b1d17</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterManager.СебестоимостьТоваров" category="Manager">
+				<xr:TypeId>6a0bc7f9-e109-40f0-b81b-ae7fc66566e4</xr:TypeId>
+				<xr:ValueId>20c45b70-58bf-4ce4-b79e-6160c4b986f3</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterSelection.СебестоимостьТоваров" category="Selection">
+				<xr:TypeId>efa5ecfc-7d8c-4c6f-aac5-38d571a7d906</xr:TypeId>
+				<xr:ValueId>854c0e5f-ad9b-4a1f-afde-319790f8fd46</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterList.СебестоимостьТоваров" category="List">
+				<xr:TypeId>dc067d6b-eb8d-44b0-86d6-f8a264159d51</xr:TypeId>
+				<xr:ValueId>10e739a7-696b-4ab8-9d3a-60bcc56f2a18</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordSet.СебестоимостьТоваров" category="RecordSet">
+				<xr:TypeId>8502843e-1e37-49b0-91d8-711d9cf4beb6</xr:TypeId>
+				<xr:ValueId>2acea7c9-ac6a-4b83-b069-a77d222f55c3</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordKey.СебестоимостьТоваров" category="RecordKey">
+				<xr:TypeId>aa575cc9-500d-451c-922b-1b119df18252</xr:TypeId>
+				<xr:ValueId>f24008e9-83a8-4d67-bee3-431e70eeddd5</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>RecordSetModule</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>СебестоимостьТоваров</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>368cdebe-81a5-4211-9550-76d2d5ffc8d4</ExtendedConfigurationObject>
+			<RegisterType>Balance</RegisterType>
+		</Properties>
+		<ChildObjects/>
+	</AccumulationRegister>
+</MetaDataObject>

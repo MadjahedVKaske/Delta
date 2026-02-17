@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="6">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="7"/>
+			<ChildItems>
+				<InputField name="ДатаЗакрытия" id="1">
+					<DataPath>ДатаЗакрытия</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаЗакрытияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ДатаЗакрытияРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ДатаЗакрытияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="СледующийМесяц" id="4">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.СледующийМесяц</CommandName>
+					<ExtendedTooltip name="СледующийМесяцРасширеннаяПодсказка" id="5"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТабДанные" id="8">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ТабДанные</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+				<ExcludedCommand>SearchHistory</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТабДанныеКонтекстноеМеню" id="9"/>
+			<AutoCommandBar name="ТабДанныеКоманднаяПанель" id="10">
+				<ChildItems>
+					<Button name="СоздатьОприходования" id="27">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьОприходования</CommandName>
+						<ExtendedTooltip name="СоздатьОприходованияРасширеннаяПодсказка" id="28"/>
+					</Button>
+					<Button name="ФормаСформироватьДокументыСписание" id="29">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Form.Command.СформироватьДокументыСписание</CommandName>
+						<ExtendedTooltip name="ФормаСформироватьДокументыСписаниеРасширеннаяПодсказка" id="30"/>
+					</Button>
+					<Button name="ТабДанныеИзменитьФорму" id="46">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<ExtendedTooltip name="ТабДанныеИзменитьФормуРасширеннаяПодсказка" id="47"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТабДанныеРасширеннаяПодсказка" id="11"/>
+			<SearchStringAddition name="ТабДанныеСтрокаПоиска" id="12">
+				<AdditionSource>
+					<Item>ТабДанные</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабДанныеСтрокаПоискаКонтекстноеМеню" id="13"/>
+				<ExtendedTooltip name="ТабДанныеСтрокаПоискаРасширеннаяПодсказка" id="14"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТабДанныеСостояниеПросмотра" id="15">
+				<AdditionSource>
+					<Item>ТабДанные</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабДанныеСостояниеПросмотраКонтекстноеМеню" id="16"/>
+				<ExtendedTooltip name="ТабДанныеСостояниеПросмотраРасширеннаяПодсказка" id="17"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТабДанныеУправлениеПоиском" id="18">
+				<AdditionSource>
+					<Item>ТабДанные</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабДанныеУправлениеПоискомКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ТабДанныеУправлениеПоискомРасширеннаяПодсказка" id="20"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ТабДанныеДокументОприходованиеПроведен" id="31">
+					<DataPath>ТабДанные.ДокументОприходование.Posted</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТабДанныеДокументОприходованиеПроведенКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ТабДанныеДокументОприходованиеПроведенРасширеннаяПодсказка" id="33"/>
+				</CheckBoxField>
+				<InputField name="ТабДанныеДокументОприходование" id="21">
+					<DataPath>ТабДанные.ДокументОприходование</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабДанныеДокументОприходованиеКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ТабДанныеДокументОприходованиеРасширеннаяПодсказка" id="23"/>
+				</InputField>
+				<InputField name="ТабДанныеДокументОприходованиеСклад" id="43">
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабДанныеДокументОприходованиеСкладКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ТабДанныеДокументОприходованиеСкладРасширеннаяПодсказка" id="45"/>
+				</InputField>
+				<InputField name="ТабДанныеДокументОприходованиеОрганизация" id="37">
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабДанныеДокументОприходованиеОрганизацияКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ТабДанныеДокументОприходованиеОрганизацияРасширеннаяПодсказка" id="39"/>
+				</InputField>
+				<InputField name="ТабДанныеДокументОприходованиеАвтор" id="40">
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабДанныеДокументОприходованиеАвторКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ТабДанныеДокументОприходованиеАвторРасширеннаяПодсказка" id="42"/>
+				</InputField>
+				<CheckBoxField name="ТабДанныеСписаниеТоваровПроведен" id="34">
+					<DataPath>ТабДанные.СписаниеТоваров.Posted</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТабДанныеСписаниеТоваровПроведенКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ТабДанныеСписаниеТоваровПроведенРасширеннаяПодсказка" id="36"/>
+				</CheckBoxField>
+				<InputField name="ТабДанныеСписаниеТоваров" id="24">
+					<DataPath>ТабДанные.СписаниеТоваров</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабДанныеСписаниеТоваровКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ТабДанныеСписаниеТоваровРасширеннаяПодсказка" id="26"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ОприходованиеСписаниеЗакрытиеМесяца</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДатаЗакрытия" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц закрытия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<Save>
+				<Field>ДатаЗакрытия</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ТабДанные" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб данные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ДокументОприходование" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ оприходование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ОприходованиеИзлишковТоваров</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СписаниеТоваров" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Списание товаров</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.СписаниеНедостачТоваров</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СледующийМесяц" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Следующий месяц</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Следующий месяц</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveRight</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СледующийМесяц</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СоздатьОприходования" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать оприходования</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать оприходования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceUpTriangleGreen</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьОприходования</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СформироватьДокументыСписание" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать списания</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать документы списание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceDownTriangleRed</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СформироватьДокументыСписание</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

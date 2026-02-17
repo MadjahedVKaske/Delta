@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Enum uuid="5976b451-ba1e-44d0-83d0-f0e6bfdf7bba">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ВариантыОтраженияНеотфактурованныхПоставокНУ" category="Ref">
+				<xr:TypeId>620a2d60-a98d-4bdf-aade-a4131943ffe2</xr:TypeId>
+				<xr:ValueId>9feee86a-7051-45e1-91a4-3080c30b174c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ВариантыОтраженияНеотфактурованныхПоставокНУ" category="Manager">
+				<xr:TypeId>da31cb8b-aa5f-4063-8db8-83983f3a5c5d</xr:TypeId>
+				<xr:ValueId>6fef3623-665d-41be-bc4c-131beec65a07</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ВариантыОтраженияНеотфактурованныхПоставокНУ" category="List">
+				<xr:TypeId>b77efc4a-d087-4aef-a7f3-86a08689c7e0</xr:TypeId>
+				<xr:ValueId>6721e69d-9730-4a20-83a6-40950885c506</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ВариантыОтраженияНеотфактурованныхПоставокНУ</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>56201e1d-a975-4335-bdcc-d942524b5870</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="7331414c-fa32-4384-a91f-f59841186fc3">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ОтражатьПриПоступлении</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>0c9cbae2-ba7f-4a57-a03f-111e4fff12cf</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a156a583-1cfb-4f97-aea3-8899aebfab89">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ОтражатьПриФактуровке</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>cf9cb7a7-9e2a-4412-867f-2e8a22e3e293</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

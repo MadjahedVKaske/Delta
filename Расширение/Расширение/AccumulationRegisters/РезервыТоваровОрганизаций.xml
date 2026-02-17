@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AccumulationRegister uuid="ee0bc68b-2a52-4f27-9318-3bf66b207c7a">
+		<InternalInfo>
+			<xr:GeneratedType name="AccumulationRegisterRecord.РезервыТоваровОрганизаций" category="Record">
+				<xr:TypeId>a29f2ed8-20fe-404b-bdc4-39c8504cb4a4</xr:TypeId>
+				<xr:ValueId>cc19cd53-0cfe-43a5-9845-9d87c3ef6247</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterManager.РезервыТоваровОрганизаций" category="Manager">
+				<xr:TypeId>e7a73a4a-08ef-44aa-b819-264a684a3010</xr:TypeId>
+				<xr:ValueId>00183fe7-26dd-476b-a024-a4e65d564f5d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterSelection.РезервыТоваровОрганизаций" category="Selection">
+				<xr:TypeId>7bc35938-8717-417c-93f0-bf1ed948c5a4</xr:TypeId>
+				<xr:ValueId>12126b40-dca9-43e1-a5e0-f61cce7e2d09</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterList.РезервыТоваровОрганизаций" category="List">
+				<xr:TypeId>d03a2645-f9f8-474e-b911-a7f01425b887</xr:TypeId>
+				<xr:ValueId>ff2fc594-95e0-4027-bc60-b53e151f864a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordSet.РезервыТоваровОрганизаций" category="RecordSet">
+				<xr:TypeId>dae3edb7-7444-4046-ba6b-4eed3ae3c6e6</xr:TypeId>
+				<xr:ValueId>c8bcc6c1-5a96-49bc-b3c1-dc4f3ebb7728</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordKey.РезервыТоваровОрганизаций" category="RecordKey">
+				<xr:TypeId>fcc74aff-fb1f-47ec-b23c-8595856ccdb4</xr:TypeId>
+				<xr:ValueId>c30328c0-ce0b-43c7-8541-bc015145fb6f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>RecordSetModule</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>РезервыТоваровОрганизаций</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>2606a793-6365-4843-925c-ebc9d9f1c956</ExtendedConfigurationObject>
+			<RegisterType>Balance</RegisterType>
+		</Properties>
+		<ChildObjects/>
+	</AccumulationRegister>
+</MetaDataObject>

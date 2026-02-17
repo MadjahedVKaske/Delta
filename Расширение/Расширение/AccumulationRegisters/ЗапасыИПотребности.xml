@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AccumulationRegister uuid="b8c98d03-c6b9-4875-8419-1a5aec939f5b">
+		<InternalInfo>
+			<xr:GeneratedType name="AccumulationRegisterRecord.ЗапасыИПотребности" category="Record">
+				<xr:TypeId>6a731696-5fba-4bdc-991d-ea45b006808a</xr:TypeId>
+				<xr:ValueId>6f870e21-c3d6-4cfb-a16e-19a8f941d520</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterManager.ЗапасыИПотребности" category="Manager">
+				<xr:TypeId>0c56fc0e-e10a-4cac-8cf2-a3690f9ae4bd</xr:TypeId>
+				<xr:ValueId>88975290-eda9-4963-8133-7fae8621497c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterSelection.ЗапасыИПотребности" category="Selection">
+				<xr:TypeId>199eccf2-1787-4b52-9f5d-996d56aa288d</xr:TypeId>
+				<xr:ValueId>00535725-c6f0-4b90-b030-5d18afd12745</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterList.ЗапасыИПотребности" category="List">
+				<xr:TypeId>a33c3686-9876-4479-bee0-7ced44e302e7</xr:TypeId>
+				<xr:ValueId>59ff1f22-7070-4829-a3a2-68eb2d10fb18</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordSet.ЗапасыИПотребности" category="RecordSet">
+				<xr:TypeId>67dcd36a-c6c2-498b-9aee-20e94f7fc1d7</xr:TypeId>
+				<xr:ValueId>775df5ca-1c7d-44a2-9ab6-7bdb2875fbc1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordKey.ЗапасыИПотребности" category="RecordKey">
+				<xr:TypeId>4e07ba75-bcc7-4768-b077-37c1b2cfebc8</xr:TypeId>
+				<xr:ValueId>15c9142b-b4c2-4bb4-87e3-406c14aa867f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>RecordSetModule</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ЗапасыИПотребности</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>f8b7177a-e10e-497a-870e-8a0109117431</ExtendedConfigurationObject>
+			<RegisterType>Balance</RegisterType>
+		</Properties>
+		<ChildObjects/>
+	</AccumulationRegister>
+</MetaDataObject>

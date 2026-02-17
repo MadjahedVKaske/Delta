@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнитьДокументыСборки" id="57">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьДокументыСборки</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьДокументыСборкиРасширеннаяПодсказка" id="58"/>
+			</Button>
+			<Button name="ФормаЗаполнитьДокументыРеализации" id="86">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьДокументыРеализации</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьДокументыРеализацииРасширеннаяПодсказка" id="87"/>
+			</Button>
+			<Button name="ФормаРаспределить" id="64">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Распределить</CommandName>
+				<ExtendedTooltip name="ФормаРаспределитьРасширеннаяПодсказка" id="65"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<InputField name="Номенклатура" id="1">
+			<DataPath>Номенклатура</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НоменклатураКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Контракт" id="66">
+			<DataPath>Контракт</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КонтрактКонтекстноеМеню" id="67"/>
+			<ExtendedTooltip name="КонтрактРасширеннаяПодсказка" id="68"/>
+		</InputField>
+		<UsualGroup name="ГруппаИтого" id="75">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа итого</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа итого</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИтогоРасширеннаяПодсказка" id="76"/>
+			<ChildItems>
+				<InputField name="ИтогоПоСборке" id="69">
+					<DataPath>ИтогоПоСборке</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ИтогоПоСборкеКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="ИтогоПоСборкеРасширеннаяПодсказка" id="71"/>
+				</InputField>
+				<InputField name="ИтогоРаспределено" id="72">
+					<DataPath>ИтогоРаспределено</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ИтогоРаспределеноКонтекстноеМеню" id="73"/>
+					<ExtendedTooltip name="ИтогоРаспределеноРасширеннаяПодсказка" id="74"/>
+				</InputField>
+				<InputField name="Распределить" id="77">
+					<DataPath>Распределить</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="РаспределитьКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="РаспределитьРасширеннаяПодсказка" id="79"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<Page name="СтраницаДокументыСборки" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы реализации/сборки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница документы сборки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаДокументыСборкиРасширеннаяПодсказка" id="54"/>
+					<ChildItems>
+						<Table name="ДокументыСборки" id="4">
+							<Representation>List</Representation>
+							<Footer>true</Footer>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ДокументыСборки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДокументыСборкиКонтекстноеМеню" id="5"/>
+							<AutoCommandBar name="ДокументыСборкиКоманднаяПанель" id="6"/>
+							<ExtendedTooltip name="ДокументыСборкиРасширеннаяПодсказка" id="7"/>
+							<SearchStringAddition name="ДокументыСборкиСтрокаПоиска" id="8">
+								<AdditionSource>
+									<Item>ДокументыСборки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыСборкиСтрокаПоискаКонтекстноеМеню" id="9"/>
+								<ExtendedTooltip name="ДокументыСборкиСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДокументыСборкиСостояниеПросмотра" id="11">
+								<AdditionSource>
+									<Item>ДокументыСборки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыСборкиСостояниеПросмотраКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="ДокументыСборкиСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДокументыСборкиУправлениеПоиском" id="14">
+								<AdditionSource>
+									<Item>ДокументыСборки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыСборкиУправлениеПоискомКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="ДокументыСборкиУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ДокументыСборкиСборка" id="17">
+									<DataPath>ДокументыСборки.Сборка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыСборкиСборкаКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="ДокументыСборкиСборкаРасширеннаяПодсказка" id="19"/>
+								</InputField>
+								<InputField name="ДокументыСборкиКоличество" id="20">
+									<DataPath>ДокументыСборки.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>ИтогоПоСборке</FooterDataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыСборкиКоличествоКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ДокументыСборкиКоличествоРасширеннаяПодсказка" id="22"/>
+								</InputField>
+								<InputField name="ДокументыСборкиРаспределено" id="80">
+									<DataPath>ДокументыСборки.Распределено</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыСборкиРаспределеноКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="ДокументыСборкиРаспределеноРасширеннаяПодсказка" id="82"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаДокументыЗакупки" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы закупки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница документы закупки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаДокументыЗакупкиРасширеннаяПодсказка" id="56"/>
+					<ChildItems>
+						<Table name="ДокументыЗакупки" id="23">
+							<Representation>List</Representation>
+							<Footer>true</Footer>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ДокументыЗакупки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДокументыЗакупкиКонтекстноеМеню" id="24"/>
+							<AutoCommandBar name="ДокументыЗакупкиКоманднаяПанель" id="25"/>
+							<ExtendedTooltip name="ДокументыЗакупкиРасширеннаяПодсказка" id="26"/>
+							<SearchStringAddition name="ДокументыЗакупкиСтрокаПоиска" id="27">
+								<AdditionSource>
+									<Item>ДокументыЗакупки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыЗакупкиСтрокаПоискаКонтекстноеМеню" id="28"/>
+								<ExtendedTooltip name="ДокументыЗакупкиСтрокаПоискаРасширеннаяПодсказка" id="29"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДокументыЗакупкиСостояниеПросмотра" id="30">
+								<AdditionSource>
+									<Item>ДокументыЗакупки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыЗакупкиСостояниеПросмотраКонтекстноеМеню" id="31"/>
+								<ExtendedTooltip name="ДокументыЗакупкиСостояниеПросмотраРасширеннаяПодсказка" id="32"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДокументыЗакупкиУправлениеПоиском" id="33">
+								<AdditionSource>
+									<Item>ДокументыЗакупки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыЗакупкиУправлениеПоискомКонтекстноеМеню" id="34"/>
+								<ExtendedTooltip name="ДокументыЗакупкиУправлениеПоискомРасширеннаяПодсказка" id="35"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ДокументыЗакупкиПоступлениеТоваров" id="36">
+									<DataPath>ДокументыЗакупки.ПоступлениеТоваров</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыЗакупкиПоступлениеТоваровКонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="ДокументыЗакупкиПоступлениеТоваровРасширеннаяПодсказка" id="38"/>
+								</InputField>
+								<InputField name="ДокументыЗакупкиНоменклатура" id="45">
+									<DataPath>ДокументыЗакупки.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыЗакупкиНоменклатураКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ДокументыЗакупкиНоменклатураРасширеннаяПодсказка" id="47"/>
+								</InputField>
+								<InputField name="ДокументыЗакупкиКоличество" id="39">
+									<DataPath>ДокументыЗакупки.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыЗакупкиКоличествоКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="ДокументыЗакупкиКоличествоРасширеннаяПодсказка" id="41"/>
+								</InputField>
+								<InputField name="ДокументыЗакупкиКоличествоПриведенное" id="42">
+									<DataPath>ДокументыЗакупки.КоличествоПриведенное</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыЗакупкиКоличествоПриведенноеКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="ДокументыЗакупкиКоличествоПриведенноеРасширеннаяПодсказка" id="44"/>
+								</InputField>
+								<InputField name="ДокументыЗакупкиУжеРаспределено" id="61">
+									<DataPath>ДокументыЗакупки.УжеРаспределено</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыЗакупкиУжеРаспределеноКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ДокументыЗакупкиУжеРаспределеноРасширеннаяПодсказка" id="63"/>
+								</InputField>
+								<InputField name="ДокументыЗакупкиКоличествоРаспределить" id="48">
+									<DataPath>ДокументыЗакупки.КоличествоРаспределить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДокументыЗакупкиКоличествоРаспределитьКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="ДокументыЗакупкиКоличествоРаспределитьРасширеннаяПодсказка" id="50"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РаспределитьТовар</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Номенклатура" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+			<Save>
+				<Field>Номенклатура</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДокументыСборки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы реализации/сборки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Сборка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реализация/Сборка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.РеализацияТоваровУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.СборкаТоваров</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Распределено" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЗакупаемыеТовары" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закупаемые товары</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДокументыЗакупки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы закупки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПоступлениеТоваров" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поступление товаров</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ПриобретениеТоваровУслуг</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПриведенное" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество приведенное</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КоличествоРаспределить" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество распределить</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="УжеРаспределено" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уже распределено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИтогоПоСборке" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итого по сборке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Контракт" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контракт</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.КонтрактыГОЗ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИтогоРаспределено" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итого распределено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Распределить" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ГотоваяПродукция" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готовая продукция</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьДокументыСборки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные сборки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить документы сборки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьДокументыСборки</Action>
+		</Command>
+		<Command name="ЗаполнитьДокументыПоступления" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить документы поступления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить документы поступления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьДокументыПоступления</Action>
+		</Command>
+		<Command name="Распределить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Распределить</Action>
+		</Command>
+		<Command name="ЗаполнитьДокументыРеализации" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные реализации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить документы реализации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьДокументыРеализации</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроектРазвития</dataPath>
+			<field>ПроектРазвития</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СтатьиРасходов.Ссылка КАК СтатьяРасходовПошлина
+ПОМЕСТИТЬ ВТ_СтатьяПошлина
+ИЗ
+	ПланВидовХарактеристик.СтатьиРасходов КАК СтатьиРасходов
+ГДЕ
+	СтатьиРасходов.Код = "УТ-000050"
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаможеннаяДекларацияИмпортРазделы.Ссылка КАК Ссылка,
+	СУММА(ТаможеннаяДекларацияИмпортРазделы.СуммаПошлины) КАК СуммаПошлины,
+	ВТ_СтатьяПошлина.СтатьяРасходовПошлина КАК СтатьяРасходовПошлина
+ПОМЕСТИТЬ ВТ_СуммаПошлины
+ИЗ
+	Документ.ТаможеннаяДекларацияИмпорт.Разделы КАК ТаможеннаяДекларацияИмпортРазделы,
+	ВТ_СтатьяПошлина КАК ВТ_СтатьяПошлина
+ГДЕ
+	ТаможеннаяДекларацияИмпортРазделы.Ссылка.Проведен
+	И НЕ ТаможеннаяДекларацияИмпортРазделы.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+СГРУППИРОВАТЬ ПО
+	ТаможеннаяДекларацияИмпортРазделы.Ссылка,
+	ВТ_СтатьяПошлина.СтатьяРасходовПошлина
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПриобретениеТоваровУслугТовары.Ссылка.ПроектРазвития КАК ПроектРазвития,
+	ПриобретениеТоваровУслугТовары.Ссылка.Организация КАК Организация,
+	ПриобретениеТоваровУслугТовары.Ссылка КАК Документ,
+	ПриобретениеТоваровУслугТовары.Номенклатура КАК Номенклатура,
+	ПриобретениеТоваровУслугТовары.Количество КАК Количество,
+	ПриобретениеТоваровУслугТовары.СуммаСНДС КАК Сумма,
+	ПриобретениеТоваровУслугТовары.Ссылка.Валюта КАК Валюта
+ИЗ
+	Документ.ПриобретениеТоваровУслуг.Товары КАК ПриобретениеТоваровУслугТовары
+ГДЕ
+	ПриобретениеТоваровУслугТовары.Ссылка.Проведен
+	И НЕ ПриобретениеТоваровУслугТовары.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+	И ПриобретениеТоваровУслугТовары.Ссылка.ХозяйственнаяОперация &lt;&gt; ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ЗакупкаУПоставщикаРеглУчет)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПриобретениеУслугПрочихАктивовРасходы.Ссылка.ПроектРазвития,
+	ПриобретениеУслугПрочихАктивовРасходы.Ссылка.Организация,
+	ПриобретениеУслугПрочихАктивовРасходы.Ссылка,
+	ПриобретениеУслугПрочихАктивовРасходы.Содержание,
+	ПриобретениеУслугПрочихАктивовРасходы.Количество,
+	ПриобретениеУслугПрочихАктивовРасходы.СуммаСНДС,
+	ПриобретениеУслугПрочихАктивовРасходы.Ссылка.Валюта
+ИЗ
+	Документ.ПриобретениеУслугПрочихАктивов.Расходы КАК ПриобретениеУслугПрочихАктивовРасходы
+ГДЕ
+	ПриобретениеУслугПрочихАктивовРасходы.Ссылка.Проведен
+	И НЕ ПриобретениеУслугПрочихАктивовРасходы.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СборкаТоваровТовары.Ссылка.ПроектРазвития,
+	СборкаТоваровТовары.Ссылка.Организация,
+	СборкаТоваровТовары.Ссылка,
+	СборкаТоваровТовары.Номенклатура,
+	ВЫБОР
+		КОГДА СборкаТоваровТовары.Ссылка.ХозяйственнаяОперация = ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СборкаТоваров)
+			ТОГДА -СборкаТоваровТовары.Количество
+		ИНАЧЕ СборкаТоваровТовары.Количество
+	КОНЕЦ,
+	0,
+	&amp;Валюта
+ИЗ
+	Документ.СборкаТоваров.Товары КАК СборкаТоваровТовары
+ГДЕ
+	СборкаТоваровТовары.Ссылка.Проведен
+	И НЕ СборкаТоваровТовары.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СборкаТоваров.ПроектРазвития,
+	СборкаТоваров.Организация,
+	СборкаТоваров.Ссылка,
+	СборкаТоваров.Номенклатура,
+	ВЫБОР
+		КОГДА СборкаТоваров.ХозяйственнаяОперация = ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СборкаТоваров)
+			ТОГДА СборкаТоваров.Количество
+		ИНАЧЕ -СборкаТоваров.Количество
+	КОНЕЦ,
+	0,
+	&amp;Валюта
+ИЗ
+	Документ.СборкаТоваров КАК СборкаТоваров
+ГДЕ
+	СборкаТоваров.Проведен
+	И НЕ СборкаТоваров.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РеализацияТоваровУслугТовары.Ссылка.ПроектРазвития,
+	РеализацияТоваровУслугТовары.Ссылка.Организация,
+	РеализацияТоваровУслугТовары.Ссылка,
+	РеализацияТоваровУслугТовары.Номенклатура,
+	-РеализацияТоваровУслугТовары.КоличествоУпаковок,
+	-РеализацияТоваровУслугТовары.СуммаСНДС,
+	РеализацияТоваровУслугТовары.Ссылка.Валюта
+ИЗ
+	Документ.РеализацияТоваровУслуг.Товары КАК РеализацияТоваровУслугТовары
+ГДЕ
+	РеализацияТоваровУслугТовары.Ссылка.Проведен
+	И НЕ РеализацияТоваровУслугТовары.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РасходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.ПроектРазвития,
+	РасходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.Организация,
+	РасходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка,
+	РасходныйКассовыйОрдерРасшифровкаПлатежа.СтатьяДвиженияДенежныхСредств,
+	0,
+	РасходныйКассовыйОрдерРасшифровкаПлатежа.Сумма,
+	РасходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.Валюта
+ИЗ
+	Документ.РасходныйКассовыйОрдер.РасшифровкаПлатежа КАК РасходныйКассовыйОрдерРасшифровкаПлатежа
+ГДЕ
+	РасходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.Проведен
+	И НЕ РасходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПриходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.ПроектРазвития,
+	ПриходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.Организация,
+	ПриходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка,
+	ПриходныйКассовыйОрдерРасшифровкаПлатежа.СтатьяДвиженияДенежныхСредств,
+	0,
+	-ПриходныйКассовыйОрдерРасшифровкаПлатежа.Сумма,
+	ПриходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.Валюта
+ИЗ
+	Документ.ПриходныйКассовыйОрдер.РасшифровкаПлатежа КАК ПриходныйКассовыйОрдерРасшифровкаПлатежа
+ГДЕ
+	ПриходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.Проведен
+	И НЕ ПриходныйКассовыйОрдерРасшифровкаПлатежа.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.ПроектРазвития,
+	ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.Организация,
+	ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка,
+	ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.СтатьяДвиженияДенежныхСредств,
+	0,
+	-ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.Сумма,
+	ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.Валюта
+ИЗ
+	Документ.ПоступлениеБезналичныхДенежныхСредств.РасшифровкаПлатежа КАК ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа
+ГДЕ
+	ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.Проведен
+	И НЕ ПоступлениеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.ПроектРазвития,
+	СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.Организация,
+	СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка,
+	СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.СтатьяДвиженияДенежныхСредств,
+	0,
+	СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.Сумма,
+	СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.Валюта
+ИЗ
+	Документ.СписаниеБезналичныхДенежныхСредств.РасшифровкаПлатежа КАК СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа
+ГДЕ
+	СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.Проведен
+	И НЕ СписаниеБезналичныхДенежныхСредствРасшифровкаПлатежа.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ТаможеннаяДекларацияИмпорт.Ссылка.ПроектРазвития,
+	ТаможеннаяДекларацияИмпорт.Ссылка.Организация,
+	ТаможеннаяДекларацияИмпорт.Ссылка,
+	ТаможеннаяДекларацияИмпорт.СтатьяРасходовСбор,
+	0,
+	ТаможеннаяДекларацияИмпорт.ТаможенныйСбор,
+	ТаможеннаяДекларацияИмпорт.Ссылка.Валюта
+ИЗ
+	Документ.ТаможеннаяДекларацияИмпорт КАК ТаможеннаяДекларацияИмпорт
+ГДЕ
+	ТаможеннаяДекларацияИмпорт.Ссылка.Проведен
+	И НЕ ТаможеннаяДекларацияИмпорт.Ссылка.ПроектРазвития = ЗНАЧЕНИЕ(Справочник.ПроектыРазвития.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_СуммаПошлины.Ссылка.ПроектРазвития,
+	ВТ_СуммаПошлины.Ссылка.Организация,
+	ВТ_СуммаПошлины.Ссылка,
+	ВТ_СуммаПошлины.СтатьяРасходовПошлина,
+	0,
+	ВТ_СуммаПошлины.СуммаПошлины,
+	ВТ_СуммаПошлины.Ссылка.Валюта
+ИЗ
+	ВТ_СуммаПошлины КАК ВТ_СуммаПошлины</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<parameter>
+		<name>Валюта</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валюта</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>Справочники.Валюты.НайтиПоКоду("643")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Затраты на проекты развития</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПроектРазвития</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a4544a3d-cce4-4403-b3b9-57e8a1a6324b</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Валюта</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">End</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Организация</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПроектРазвития</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Номенклатура</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сумма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Дополнительный</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Затраты по документам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПроектРазвития</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>17864318-3c5f-4af9-8f9e-0f0dcb372b36</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Валюта</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПроектРазвития</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Организация</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Документ</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Номенклатура</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

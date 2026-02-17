@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Enum uuid="0f732767-9570-4771-a071-32aaa3c7541c">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.СтатусыЗаявокНаРасходованиеДенежныхСредств" category="Ref">
+				<xr:TypeId>6bab304e-b478-4542-9102-7ed3d9496650</xr:TypeId>
+				<xr:ValueId>f9e33618-24cc-450f-84ea-75bd2b77b8bf</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.СтатусыЗаявокНаРасходованиеДенежныхСредств" category="Manager">
+				<xr:TypeId>8c82ef50-1d41-4037-9f95-f28eaadc259f</xr:TypeId>
+				<xr:ValueId>31b3aba4-9c13-4134-a130-e7460a33d98d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.СтатусыЗаявокНаРасходованиеДенежныхСредств" category="List">
+				<xr:TypeId>bf05201a-d69a-4521-9d60-3726510e1536</xr:TypeId>
+				<xr:ValueId>ed1a4bac-8aed-47fc-bff9-a538643af404</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>СтатусыЗаявокНаРасходованиеДенежныхСредств</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>22eba3bf-759c-463a-bb08-f0d1b4910ac9</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="3ce6604d-1d21-4cda-bf30-9801cbcc8ea9">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Согласована</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>fd602008-2753-4368-9638-8d3803d0e2b2</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="377afa34-3a45-428a-96d5-c30b228923f5">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НеСогласована</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>97bb9b6a-7fb1-4a97-a53b-783fb8e84c2d</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="c27d9156-fc66-4ea2-a13b-7540b6cdfc75">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КОплате</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>a2703597-0f89-452e-b22a-4a3c82f7b70d</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="d09ad840-8ba5-447a-876c-256212648b78">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Отклонена</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>7ede1cab-9143-42b4-9eb3-fd405c68c64c</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

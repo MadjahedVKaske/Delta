@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Enum uuid="7d31f19f-6261-461a-b470-0be8c5866340">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ВидыДеятельностиРасходов" category="Ref">
+				<xr:TypeId>c03217bd-f32c-4914-b452-5360e02641b4</xr:TypeId>
+				<xr:ValueId>4a94439a-f1bf-48a9-9b22-a02057c20ec1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ВидыДеятельностиРасходов" category="Manager">
+				<xr:TypeId>8b07ebeb-c465-49d5-a9ca-799a7e0dfeef</xr:TypeId>
+				<xr:ValueId>25904082-9dda-4a9c-aad9-d7f85c010711</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ВидыДеятельностиРасходов" category="List">
+				<xr:TypeId>07e295ae-380d-4afe-90b7-cf5668ee8485</xr:TypeId>
+				<xr:ValueId>fbf47162-50e1-4fef-9917-ff1714286ce6</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ВидыДеятельностиРасходов</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>89d8ba70-96a2-47ac-a372-000f9c661fd4</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="a1ba14fd-b533-4687-808a-077d3687b5d9">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ОсновнаяДеятельность</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>d9ee8774-e865-49af-a719-07f933a0b163</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="699e4027-5256-4576-8ec2-2fdca3c67007">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ПрочаяДеятельность</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>9079d33b-0cc5-40b0-92c0-b18bd0eebf8a</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="462425ed-69e9-45fb-a453-2d95b2def982">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ОсновнаяИПрочаяДеятельность</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>75d3d185-752e-42f2-94f2-f5945f760555</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>
